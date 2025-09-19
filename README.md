@@ -2,7 +2,7 @@
 
 This Movie Recommender System is a modular Python application built with FastAPI and Docker. It demonstrates full-stack software engineering skills, including data modeling, algorithm implementation, API development, and deployment. Users can retrieve top-rated movies via a REST API, and the system is designed to easily extend with collaborative filtering, personalized recommendations, and additional filtering options.  
 
-**Skills showcased:** Python, FastAPI, REST API design, Docker, data processing (pandas), recommendation algorithms, clean code architecture, modular design, version control (Git/GitHub).
+**Skills showcased:** Python, FastAPI, Docker, data processing (pandas), recommendation algorithms, clean code architecture, modular design, version control (Git/GitHub).
 
 
 
@@ -19,17 +19,7 @@ The project demonstrates a clean architecture with:
 ---
 
 ## Project Structure
-movie-recommender/
-│
-├── models/ # Movie and User classes
-├── recommender/ # Recommender algorithms
-├── services/ # Recommendation service layer
-├── web/ # FastAPI application
-├── data/ # Datasets (e.g., MovieLens)
-├── tests/ # Unit tests
-├── Dockerfile # Docker configuration
-├── requirements.txt # Python dependencies
-└── README.md
+Insert here when done
 
 ---
 
@@ -46,14 +36,12 @@ docker build -t movie-recommender .
 2. **Run the Docker container**:
 
 ```bash
-docker run -p 8000:8000 movie-recommender
+docker run -p 8000:8000 -e TMDB_API_KEY=<YOUR_OWN_API_KEY> movie-recommender
 ```
 
 3. **Access the API**:
-- Swagger UI (interactive docs): http://localhost:8000/docs
-- Top movies endpoint: http://localhost:8000/movies/top
 
-The API will automatically serve the recommendation endpoints defined in the FastAPI app.
+By creating an account here: https://www.themoviedb.org/. Then sign in and create a API key for free. Copy it and paste it into <YOUR_OWN_API_KEY> in the previous step.
 
 
 ## Requirements
