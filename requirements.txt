@@ -1,5 +1,7 @@
 # List of dependencies for the project
 # pip install -r requirements.txt
-fastapi     # for API framework
-uvicorn     # server for FastAPI
-pandas      # data manipulation and analysis
+fastapi   # for API framework
+uvicorn   # server for FastAPI
+pandas    # data manipulation and analysis
+jinja2    # HTML templating engine
+requests  # for making HTTP requests

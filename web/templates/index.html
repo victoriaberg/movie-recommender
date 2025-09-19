@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender</title>
+</head>
+<body>
+    <h1>Movie Recommender</h1>
+
+    <form method="get" action="/movies">
+        <label for="min_rating">Select minimum rating:</label>
+        <select name="min_rating" id="min_rating">
+            {% for i in range(0, 11) %}
+                <option value="{{ i }}" {% if min_rating is defined and min_rating == i %}selected{% endif %}>{{ i }}+</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Movies">
+    </form>
+
+    {% if movies %}
+        <h2>Movies:</h2>
+        <ul>
+            {% for movie in movies %}
+                <li>{{ movie.title }} - {{ movie.rating }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No movies found for the selected rating.</p>
+    {% endif %}
+</body>
+</html>

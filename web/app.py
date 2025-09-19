@@ -1,19 +1,26 @@
-from fastapi import FastAPI
-from services.recommendation_service import RecommendationService
+from fastapi import FastAPI, Request, Query
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
+from web.services.tmdb_service import TMDbService
+import os
 
 app = FastAPI()
+templates = Jinja2Templates(directory="web/templates")
 
-# Dummy in-memory data
-movies = []  # TODO: load from dataset
-users = {}
-service = RecommendationService(movies, users)
+# Use environment variable for API key
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY", "YOUR_API_KEY_HERE")
+tmdb = TMDbService(TMDB_API_KEY)
 
-@app.get("/movies/top")
-def get_top_movies(k: int = 10):
-    results = service.get_top_movies(k)
-    return [{"id": m.movie_id, "title": m.title, "rating": m.average_rating()} for m in results]
+@app.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    # Render home page with empty movies list
+    return templates.TemplateResponse("index.html", {"request": request, "movies": []})
 
-@app.get("/recommendations/{user_id}")
-def get_recommendations(user_id: int, k: int = 10):
-    results = service.get_recommendations_for_user(user_id, k)
-    return [{"id": m.movie_id, "title": m.title, "rating": m.average_rating()} for m in results]
+@app.get("/movies", response_class=HTMLResponse)
+def movies(request: Request, min_rating: float = Query(0, ge=0, le=10)):
+    movie_list = tmdb.get_movies(min_rating=min_rating)
+    return templates.TemplateResponse(
+        "index.html",
+        {"request": request, "movies": movie_list}
+    )
+
