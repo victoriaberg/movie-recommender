@@ -8,48 +8,50 @@ This Movie Recommender System is a modular Python application built with FastAPI
 
 # Movie Recommender System
 
-A modular movie recommender system built with Python and FastAPI.  
+A modular movie recommender system built with Python (backend) and React (frontend).  
 The project demonstrates a clean architecture with:
-
 - Data models for movies and users
 - Baseline popularity-based recommendations
 - REST API endpoints for recommendations
 - Extendable design for future ML algorithms (collaborative filtering, matrix factorization, etc.)
 
----
 
-## Project Structure
-Insert here when done
-
----
 
 ## Running the Project with Docker
 
 Docker ensures that your environment is consistent and all dependencies are included.
 
-1. **Build the Docker image**:
+1. **Access the API**:
+
+By creating an account here: https://www.themoviedb.org/. Sign in and create a API key for free. Save you API key by typing:
+```bash
+export TMDB_API_KEY=<your_api_key>
+docker-compose up --build
+```
+By inserting you own API at <your_api_key> above.
+
+
+Optional steps:
+2. **Build the Docker image**:
 
 ```bash
-docker build -t movie-recommender .
+docker-compose build frontend
 ```
 
-2. **Run the Docker container**:
+3. **Run the Docker container**:
 
 ```bash
-docker run -p 8000:8000 -e TMDB_API_KEY=<YOUR_OWN_API_KEY> movie-recommender
+docker-compose up
 ```
-
-3. **Access the API**:
-
-By creating an account here: https://www.themoviedb.org/. Then sign in and create a API key for free. Copy it and paste it into <YOUR_OWN_API_KEY> in the previous step.
 
 
 ## Requirements
 Make sure requirements.txt contains all libraries needed for the project. At minimum:
-fastapi
-uvicorn
-pandas
-scikit-learn
+fastapi   # for API framework
+uvicorn   # server for FastAPI
+pandas    # data manipulation and analysis
+jinja2    # HTML templating engine
+requests  # for making HTTP requests
 
 Docker will install these automatically during build.
 
