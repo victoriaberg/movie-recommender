@@ -50,11 +50,13 @@ docker-compose up --build
 Once the containers have started, you can access the application:
 
 Frontend (React App): Open your browser to http://localhost:3000
+
 Backend API (FastAPI): The API runs at http://localhost:8000/movies
 
 
 ## Backend dependencies
 These are the minimal libraries required in the Python environment to run the FastAPI backend:
+
 * fastapi   # for API framework
 * uvicorn   # server for FastAPI
 * requests  # for making HTTP requests
