@@ -35,7 +35,7 @@ The backend service requires your TMDb API key as an environment variable. Repla
 ```bash
 export TMDB_API_KEY=<your_api_key>
 ```
-By inserting you own API at <your_api_key> above.
+By inserting your own API at <your_api_key> above.
 
 
 **Step 2. Build and start containers**:
