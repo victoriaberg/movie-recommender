@@ -28,7 +28,7 @@ This Movie Recommender System is a modular Python application built with FastAPI
 Docker ensures that your environment is consistent and all dependencies are included.
 
 
-Step 1. **Access the API**:
+**Step 1. Access the API**:
 
 The backend service requires your TMDb API key as an environment variable. Replace `<your_api_key>` with your actual key.
 
@@ -37,13 +37,15 @@ export TMDB_API_KEY=<your_api_key>
 ```
 By inserting you own API at <your_api_key> above.
 
-Step 2. **Build and start containers**:
+
+**Step 2. Build and start containers**:
 
 ```bash
 docker-compose up --build
 ```
 
-Step 3. **Open the application**:
+
+**Step 3. Open the application**:
 
 Once the containers have started, you can access the application:
 
