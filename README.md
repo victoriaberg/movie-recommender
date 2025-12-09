@@ -7,6 +7,10 @@ This project demonstrates a full-stack solution where the backend fetches real-t
 
 ## About This Project
 
+### Overview
+
+<img width="1792" height="974" alt="image" src="https://github.com/user-attachments/assets/15fcdddd-d4ed-4d60-8670-52d5cbb9543e" />
+
 This Movie Recommender System is a modular Python application built with FastAPI and Docker. It demonstrates full-stack software engineering skills, including data modeling, algorithm implementation, API development, and deployment. Users can retrieve top-rated movies via a REST API, and the system is designed to easily extend with collaborative filtering, personalized recommendations, and additional filtering options.  
 
 
