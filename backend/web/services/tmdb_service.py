@@ -22,7 +22,8 @@ class TMDbService:
                 break
             data = response.json()
             for m in data.get("results", []):
-                movies.append({"title": m["title"], "rating": m["vote_average"]})
+                if m.get("vote_average", 0) >= min_rating:
+                    movies.append({"title": m["title"], "rating": m["vote_average"]})
             if len(movies) >= max_results:
                 break
         return movies[:max_results]

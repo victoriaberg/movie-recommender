@@ -3,3 +3,5 @@
 fastapi   # for API framework
 uvicorn   # server for FastAPI
 requests  # for making HTTP requests
+pytest    # To run tests
+httpx     # Required by FastAPI test client
