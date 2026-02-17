@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 from backend.web.services.tmdb_service import TMDbService
 
-# To run all tests in the backend folder, run `python -m pytest tests/backend/` from the root of the project.
+# To run all tests in the backend folder, run `python -m pytest backend/tests/` from the root of the project.
 
 @patch("backend.web.services.tmdb_service.requests.get")
 def test_get_movies_filtering(mock_get):

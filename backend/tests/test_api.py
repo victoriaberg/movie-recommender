@@ -2,7 +2,7 @@ import sys
 import os
 from fastapi.testclient import TestClient
 
-# To run all tests in the backend folder, run `python -m pytest tests/backend/` from the root of the project.
+# To run all tests in the backend folder, run `python -m pytest backend/tests/` from the root of the project.
 
 # Find absolute search way to backend folder
 backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../backend"))
