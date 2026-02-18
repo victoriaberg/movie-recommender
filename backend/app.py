@@ -18,6 +18,7 @@ TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 tmdb = TMDbService(TMDB_API_KEY)
 
 @app.get("/movies")
-def get_movies(min_rating: float = Query(0, ge=0, le=10)):
-    movie_list = tmdb.get_movies(min_rating=min_rating)
+def get_movies(min_rating: float = Query(0, ge=0, le=10), genre: str = Query(None)):
+    movie_list = tmdb.get_movies(min_rating=min_rating, genre=genre)
     return movie_list  # returns JSON
+    

@@ -5,7 +5,7 @@ class TMDbService:
         self.api_key = api_key
         self.base_url = "https://api.themoviedb.org/3"
 
-    def get_movies(self, min_rating=0, max_results=20, max_pages=5):
+    def get_movies(self, min_rating=0, max_results=20, genre=None, max_pages=5):
         movies = []
         for page in range(1, max_pages + 1):
             url = f"{self.base_url}/discover/movie"
@@ -14,6 +14,7 @@ class TMDbService:
                 "language": "en-US",
                 "sort_by": "popularity.desc",
                 "vote_average.gte": min_rating,
+                "with_genres": genre,
                 "page": page
             }
             response = requests.get(url, params=params)
