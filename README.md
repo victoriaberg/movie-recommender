@@ -9,9 +9,10 @@ This project demonstrates a full-stack solution where the backend fetches real-t
 
 ### Overview
 
-<img width="1792" height="974" alt="image" src="https://github.com/user-attachments/assets/15fcdddd-d4ed-4d60-8670-52d5cbb9543e" />
+<img width="1792" height="974" alt="image" src="https://github.com/user-attachments/assets/d18019e7-e067-4dca-b324-b9e62bc11059" />
 
-This Movie Recommender System is a modular Python application built with FastAPI and Docker. It demonstrates full-stack software engineering skills, including data modeling, algorithm implementation, API development, and deployment. Users can retrieve top-rated movies via a REST API, and the system is designed to easily extend with collaborative filtering, personalized recommendations, and additional filtering options.  
+
+This Movie Recommender System is a modular Python application built with FastAPI and Docker. It demonstrates full-stack software engineering skills, including data modeling, algorithm implementation, API development and deployment. Users can retrieve top-rated movies via a REST API and apply filters for various genres (e.g., Comedy, Horror and Sci-Fi) to narrow down their search. The system is designed to easily extend with collaborative filtering, personalized recommendations and additional filtering options.
 
 
 **Skills showcased:** 
@@ -20,6 +21,7 @@ This Movie Recommender System is a modular Python application built with FastAPI
 * **API Integration:** Uses an external API (TMDb) for movie data.
 * **Containerization (Docker):** Uses Docker Compose to run both the frontend and backend in isolated environments.
 * **Clean Code:** Modularized architecture for easy development and maintenance.
+* **Dynamic filtering:** Implemented genre-based filtering (All Genres, Action, Comedy, Drama, Horror, Romance and Sci-Fi) and rating thresholds.
 
 
 ## Requirements
@@ -64,13 +66,15 @@ These are the minimal libraries required in the Python environment to run the Fa
 * fastapi   # for API framework
 * uvicorn   # server for FastAPI
 * requests  # for making HTTP requests
+* pytest    # to run tests
+* httpx     # required by FastAPI test client
 
 Docker will install these automatically during build.
 
 
 ## Future Improvements
 - Implement a caching mechanism to reduce calls to the TMDb API.
-- Add filtering by genre, year, or other movie categories.
+- Add filtering year or other movie categories.
 
 
 ## NOTES
